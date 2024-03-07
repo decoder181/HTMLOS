@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<style>body{background-color: black; color:white; font-family: Arial, Helvetica, sans-serif;
+}
+button{background-color: mediumspringgreen; color: black; font-family: Arial, Helvetica, sans-serif;}
+</style>
+
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <h1>Word</h1>
+
+    <textarea id="textArea" rows="100" cols="160"></textarea><br>
+
+    <button onclick="downloadTextFile()">Download</button>
+
+    <a href="HTMLOS.html"><button>Back to homescreen</button></a>
+
+    <script>
+        function downloadTextFile() {
+            // Get the text content entered by the user
+            var textContent = document.getElementById('textArea').value;
+        
+            // Create a new Blob containing the text content
+            var blob = new Blob([textContent], { type: 'text/plain' });
+        
+            // Create a new URL for the Blob
+            var url = URL.createObjectURL(blob);
+        
+            // Create a new anchor element with download attribute
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'document.txt';
+        
+            // Programmatically trigger a click event on the anchor element
+            a.click();
+        
+            // Clean up by revoking the URL object
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+</body>
+</html>
+
+
