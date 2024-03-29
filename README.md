@@ -1,1 +1,1 @@
-To use, put all files into a folder called "HTMLOS files", then open "HTMLOS.html" to use!
+Open "HTMLOS.html" to use! This is beta 0.6.1
